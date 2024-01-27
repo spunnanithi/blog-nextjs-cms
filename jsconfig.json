@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"],
+      "@styles/*": ["styles/*"],
+    }
+  },
+  "include": ["next-env.d.js", "**/*.js", "**/*.jsx", "prettier.config.js"],
+  "exclude": ["node_modules"],
+}
