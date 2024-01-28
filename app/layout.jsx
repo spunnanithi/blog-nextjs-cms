@@ -1,9 +1,10 @@
-import { Inter } from "next/font/google";
+import { Inter, Fira_Code } from "next/font/google";
 import "@styles/globals.css";
 import NavBar from "components/NavBar";
 import CustomThemeProvider from "lib/utils/CustomThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
+const firaCode = Fira_Code({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Blog",
@@ -13,12 +14,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} bg-primary-light dark:bg-primary-dark text-primary-light dark:text-primary-dark mx-auto h-full max-w-5xl`}
+      >
         <CustomThemeProvider>
-          <header className="mx-auto max-w-5xl px-6">
+          {/* Header */}
+          <header>
             <NavBar />
           </header>
-          <main className="mx-auto flex min-h-screen max-w-5xl items-center justify-center">
+
+          {/* Main content */}
+          <main className="flex min-h-screen items-center justify-center">
             {children}
           </main>
         </CustomThemeProvider>

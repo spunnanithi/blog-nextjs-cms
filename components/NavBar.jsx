@@ -4,7 +4,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 const NavBar = () => {
   return (
-    <nav className="flex h-16 w-full items-center justify-between">
+    <nav className="flex h-16 w-full items-center justify-between px-6">
       <Link href="/">
         <div>Sirasit's Blog</div>
       </Link>
