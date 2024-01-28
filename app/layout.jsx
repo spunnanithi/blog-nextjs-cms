@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
-import NavBar from "./components/NavBar";
+import "@styles/globals.css";
+import NavBar from "components/NavBar";
+import CustomThemeProvider from "lib/utils/CustomThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +14,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="mx-auto max-w-5xl px-6">
-          <NavBar />
-        </header>
-        <main className="mx-auto flex min-h-screen max-w-5xl items-center justify-center">
-          {children}
-        </main>
+        <CustomThemeProvider>
+          <header className="mx-auto max-w-5xl px-6">
+            <NavBar />
+          </header>
+          <main className="mx-auto flex min-h-screen max-w-5xl items-center justify-center">
+            {children}
+          </main>
+        </CustomThemeProvider>
       </body>
     </html>
   );
