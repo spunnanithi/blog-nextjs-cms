@@ -1,10 +1,7 @@
-import { Inter, Fira_Code } from "next/font/google";
+import { roboto } from "@styles/fonts";
 import "@styles/globals.css";
 import NavBar from "components/NavBar";
 import CustomThemeProvider from "lib/utils/CustomThemeProvider";
-
-const inter = Inter({ subsets: ["latin"] });
-const firaCode = Fira_Code({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Blog",
@@ -15,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-primary-light dark:bg-primary-dark text-primary-light dark:text-primary-dark mx-auto h-full max-w-5xl`}
+        className={`${roboto.className} bg-primary-light dark:bg-primary-dark text-primary-light dark:text-primary-dark mx-auto h-full max-w-5xl`}
       >
         <CustomThemeProvider>
           {/* Header */}
