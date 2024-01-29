@@ -1,5 +1,5 @@
 import Header from "@components/Header";
-import Post from "@components/Post";
+import PostCard from "@components/PostCard";
 import { client } from "@sanity/lib/client";
 
 // Function is run on the NextJS server and NOT the client
@@ -7,6 +7,7 @@ async function getPosts() {
   const query = `*[_type == "post"] {
     title,
     slug,
+    mainImage,
     publishedAt,
     excerpt,
     tags[]-> {
@@ -30,7 +31,7 @@ export default async function Home() {
       <Header title="Featured Posts" />
       {posts?.length > 0 &&
         posts?.map((post, index) => {
-          return <Post key={index} post={post} />;
+          return <PostCard key={index} post={post} />;
         })}
     </div>
   );

@@ -1,5 +1,5 @@
 import moment from "moment";
 
 export const convertIsoToDate = (date) => {
-  return moment().format("dddd, MMMM Do, YYYY");
+  return moment(date).format("dddd, MMMM Do, YYYY");
 };

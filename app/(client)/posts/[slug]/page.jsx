@@ -6,11 +6,13 @@ import { convertIsoToDate } from "@utils/FormatDate";
 import Link from "next/link";
 import React from "react";
 import myPortableTextComponents from "@components/Post/PostContent/PortableComponent";
+import ImagePortableComponent from "@components/Post/PostContent/ImagePortableComponent";
 
 async function getPost(slug) {
   const query = `*[_type == "post" && slug.current == "${slug}"] {
     title,
     slug,
+    mainImage,
     publishedAt,
     excerpt,
     _id,
@@ -39,6 +41,9 @@ const PostHome = async ({ params }) => {
 
       {/* Content */}
       <div className="flex flex-col items-center gap-5">
+        <div>
+          <ImagePortableComponent value={singlePost?.mainImage} />
+        </div>
         <span>
           Published on: <span>{convertIsoToDate(singlePost?.publishedAt)}</span>
         </span>

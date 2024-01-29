@@ -8,7 +8,11 @@ import {
   TooltipTrigger,
 } from "@components/ui/tooltip";
 
-const ImagePortableComponent = ({ value }) => {
+const ImagePortableComponent = ({
+  value,
+  imageHeight = 700,
+  imageWidth = 700,
+}) => {
   if (!value?.asset?._ref) {
     return value;
   }
@@ -16,18 +20,16 @@ const ImagePortableComponent = ({ value }) => {
   return (
     <TooltipProvider>
       <Tooltip>
-        <div className="flex flex-col items-center justify-center">
-          <TooltipTrigger>
-            <Image
-              loading="lazy"
-              src={urlForImage(value)}
-              alt="alt"
-              height={value?.imageHeight || 700}
-              width={value?.imageWidth || 700}
-              style={{ objectFit: "contain" }}
-            />
-          </TooltipTrigger>
-        </div>
+        <TooltipTrigger>
+          <Image
+            loading="lazy"
+            src={urlForImage(value)}
+            alt="alt"
+            height={imageHeight}
+            width={imageWidth}
+            style={{ objectFit: "contain" }}
+          />
+        </TooltipTrigger>
         <TooltipContent>
           <p>{value.alt}</p>
         </TooltipContent>

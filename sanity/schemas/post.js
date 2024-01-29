@@ -30,6 +30,21 @@ export const post = {
       initialValue: () => new Date().toISOString(),
     },
     {
+      name: "mainImage",
+      title: "Main Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
+    },
+    {
       name: "excerpt",
       title: "Excerpt",
       type: "text",

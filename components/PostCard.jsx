@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { convertIsoToDate } from "@utils/FormatDate";
 import { Button } from "./ui/button";
-
+import ImagePortableComponent from "./Post/PostContent/ImagePortableComponent";
 import {
   Card,
   CardContent,
@@ -13,17 +12,16 @@ import {
   CardTitle,
 } from "./ui/card";
 
-const Post = ({ post }) => {
+const PostCard = ({ post }) => {
   return (
     <Link href={`/posts/${post.slug?.current}`}>
       <Card className="flex bg-myGreyBlue shadow-sm shadow-myDarkBlue hover:bg-myBlue hover:shadow-md dark:bg-myBlue dark:shadow-mySteelBlue hover:dark:bg-myGreyBlue">
         {/* Left Side of Card */}
         <div className="flex flex-shrink-0 items-center pl-6">
-          <Image
-            src={"/images/books.svg"}
-            alt="books"
-            width={100}
-            height={50}
+          <ImagePortableComponent
+            value={post?.mainImage}
+            imageWidth={200}
+            imageHeight={100}
           />
         </div>
 
@@ -59,4 +57,4 @@ const Post = ({ post }) => {
   );
 };
 
-export default Post;
+export default PostCard;
