@@ -49,6 +49,11 @@ module.exports = {
         title: "700", // Title
         subtitle: "500", // Subtitles
       },
+      fontSize: {
+        header: ["24px", "32px"], // [fontSize, lineHeight]
+        title: ["20px", "28px"],
+        subtitle: ["18px", "28px"],
+      },
       colors: {
         // Personally added colors
         mySteelBlue: "#4682b4",

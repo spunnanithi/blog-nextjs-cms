@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} bg-primary-light dark:bg-primary-dark text-primary-light dark:text-primary-dark mx-auto h-full max-w-5xl`}
+        className={`${roboto.className} mx-auto h-full max-w-5xl bg-primary-light text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
       >
         <CustomThemeProvider>
           {/* Header */}
@@ -21,9 +21,7 @@ export default function RootLayout({ children }) {
           </header>
 
           {/* Main content */}
-          <main className="flex min-h-screen items-center justify-center">
-            {children}
-          </main>
+          <main className="flex min-h-screen justify-center">{children}</main>
         </CustomThemeProvider>
       </body>
     </html>
