@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} text-primary-light dark:text-primary-dark mx-auto h-full max-w-5xl bg-transparent`}
+        className={`${roboto.className} mx-auto h-full max-w-7xl bg-transparent text-primary-light dark:text-primary-dark`}
       >
         <CustomThemeProvider>
           <CMSNavBar />

@@ -21,7 +21,9 @@ export default function RootLayout({ children }) {
           </header>
 
           {/* Main content */}
-          <main className="flex min-h-screen justify-center">{children}</main>
+          <main className="flex min-h-screen max-w-5xl justify-center">
+            {children}
+          </main>
         </CustomThemeProvider>
       </body>
     </html>
