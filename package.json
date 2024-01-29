@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run open-browser && next dev",
+    "open-browser": "open http://localhost:3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -11,6 +12,8 @@
   "dependencies": {
     "@portabletext/react": "^3.0.11",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@sanity/code-input": "^4.1.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.26.1",
     "class-variance-authority": "^0.7.0",
@@ -22,6 +25,7 @@
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-syntax-highlighter": "^15.5.0",
     "sanity": "^3.26.1",
     "styled-components": "^6.1.8",
     "tailwind-merge": "^2.2.1",

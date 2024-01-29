@@ -2,11 +2,10 @@ import Header from "@components/Header";
 import { Button } from "@components/ui/button";
 import { PortableText } from "@portabletext/react";
 import { client } from "@sanity/lib/client";
-import { urlForImage } from "@sanity/lib/image";
 import { convertIsoToDate } from "@utils/FormatDate";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import myPortableTextComponents from "@components/Post/PostContent/PortableComponent";
 
 async function getPost(slug) {
   const query = `*[_type == "post" && slug.current == "${slug}"] {
@@ -27,30 +26,7 @@ async function getPost(slug) {
   return post;
 }
 
-const richTextStyles = `
-mt-14
-text-justify
-mx-auto
-prose-headings:my-5
-prose-h1:text-header
-prose-h1:font-header
-prose-h2:text-title
-prose-h2:font-title
-prose-h3:text-subtitle
-prose-h3:font-subtitle
-prose-p:leading-7
-prose-li:list-disc
-prose-li:leading-7
-prose-li:ml-5
-`;
-
-const myPortableTextComponents = {
-  types: {
-    image: ({ value }) => (
-      <Image src={urlForImage(value)} alt="alt" height={700} width={700} />
-    ),
-  },
-};
+export const revalidate = 60;
 
 const PostHome = async ({ params }) => {
   const post = await getPost(params.slug);
@@ -77,7 +53,7 @@ const PostHome = async ({ params }) => {
         </div>
       </div>
 
-      <div className={richTextStyles}>
+      <div>
         <PortableText
           value={singlePost?.body}
           components={myPortableTextComponents}
