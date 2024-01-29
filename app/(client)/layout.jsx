@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} mx-auto h-full max-w-5xl bg-primary-light text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
+        className={`${roboto.className} mx-auto h-full max-w-5xl bg-primary-light pb-32 text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
       >
         <CustomThemeProvider>
           {/* Header */}

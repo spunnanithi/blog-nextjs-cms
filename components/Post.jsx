@@ -47,7 +47,7 @@ const Post = ({ post }) => {
               {post?.tags?.map((tag) => {
                 return (
                   <Button variant="link" key={tag._id}>
-                    <Link href={`/tag/${tag.slug.current}`}>#{tag.name}</Link>
+                    #{tag.name}
                   </Button>
                 );
               })}
