@@ -5,6 +5,8 @@ import { client } from "@sanity/lib/client";
 // Function is run on the NextJS server and NOT the client
 async function getPosts() {
   const query = `*[_type == "post"] {
+    _createdAt,
+    _updatedAt,
     title,
     slug,
     mainImage,

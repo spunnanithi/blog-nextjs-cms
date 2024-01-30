@@ -20,16 +20,18 @@ const ImagePortableComponent = ({
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger>
-          <Image
-            loading="lazy"
-            src={urlForImage(value)}
-            alt="alt"
-            height={imageHeight}
-            width={imageWidth}
-            style={{ objectFit: "contain" }}
-          />
-        </TooltipTrigger>
+        <div className="flex flex-col items-center justify-center">
+          <TooltipTrigger>
+            <Image
+              loading="lazy"
+              src={urlForImage(value)}
+              alt="alt"
+              height={imageHeight}
+              width={imageWidth}
+              style={{ objectFit: "contain" }}
+            />
+          </TooltipTrigger>
+        </div>
         <TooltipContent>
           <p>{value.alt}</p>
         </TooltipContent>

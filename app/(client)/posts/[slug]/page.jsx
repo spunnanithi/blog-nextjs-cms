@@ -1,15 +1,14 @@
-import Header from "@components/Header";
-import { Button } from "@components/ui/button";
 import { PortableText } from "@portabletext/react";
 import { client } from "@sanity/lib/client";
-import { convertIsoToDate } from "@utils/FormatDate";
-import Link from "next/link";
 import React from "react";
 import myPortableTextComponents from "@components/Post/PostContent/PortableComponent";
-import ImagePortableComponent from "@components/Post/PostContent/ImagePortableComponent";
+import PostHeader from "@components/Post/PostHeader/PostHeader";
 
+// Function is run on the NextJS server and NOT the client
 async function getPost(slug) {
   const query = `*[_type == "post" && slug.current == "${slug}"] {
+    _createdAt,
+    _updatedAt,
     title,
     slug,
     mainImage,
@@ -35,29 +34,11 @@ const PostHome = async ({ params }) => {
   const singlePost = post[0];
 
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex flex-col">
       {/* Header */}
-      <Header title={singlePost?.title} />
+      <PostHeader singlePost={singlePost} />
 
       {/* Content */}
-      <div className="flex flex-col items-center gap-5">
-        <div>
-          <ImagePortableComponent value={singlePost?.mainImage} />
-        </div>
-        <span>
-          Published on: <span>{convertIsoToDate(singlePost?.publishedAt)}</span>
-        </span>
-        <div className="flex gap-5">
-          {singlePost?.tags?.map((tag) => {
-            return (
-              <Button variant="link" key={tag._id}>
-                <Link href={`/tag/${tag.slug.current}`}>#{tag.name}</Link>
-              </Button>
-            );
-          })}
-        </div>
-      </div>
-
       <div>
         <PortableText
           value={singlePost?.body}

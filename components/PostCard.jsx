@@ -44,7 +44,11 @@ const PostCard = ({ post }) => {
             <div className="flex flex-wrap gap-3">
               {post?.tags?.map((tag) => {
                 return (
-                  <Button variant="link" key={tag._id}>
+                  <Button
+                    className="bg-slate-800 p-2 lowercase text-myLightGreyBlue dark:bg-myLightGreyBlue dark:text-slate-800"
+                    variant="link"
+                    key={tag._id}
+                  >
                     #{tag.name}
                   </Button>
                 );

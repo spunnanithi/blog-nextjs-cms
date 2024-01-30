@@ -22,7 +22,7 @@ const CopyableCodeSnippet = ({ children }) => {
       </span>
       <button
         onClick={handleCopyClick}
-        className="rounded-lg bg-blue-900 p-2 text-sm text-white"
+        className="rounded-lg bg-blue-800 p-2 text-sm text-white"
       >
         {isCopied ? "Copied" : "Copy"}
       </button>

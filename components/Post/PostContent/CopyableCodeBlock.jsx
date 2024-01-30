@@ -39,10 +39,10 @@ const CopyableCodeBlock = ({ children }) => {
 
   return (
     <div className="relative">
-      <div className="absolute right-1 top-1 p-2">
+      <div className="absolute right-2 top-1 p-2">
         <button
           onClick={handleCopyClick}
-          className="rounded-lg bg-blue-900 p-2 text-sm text-white"
+          className="rounded-lg bg-blue-800 p-2 text-sm text-white"
         >
           {isCopied ? "Copied" : "Copy"}
         </button>
