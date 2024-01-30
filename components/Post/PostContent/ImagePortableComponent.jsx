@@ -12,6 +12,7 @@ const ImagePortableComponent = ({
   value,
   imageHeight = 700,
   imageWidth = 700,
+  borderRadius = 0,
 }) => {
   if (!value?.asset?._ref) {
     return value;
@@ -28,7 +29,13 @@ const ImagePortableComponent = ({
               alt="alt"
               height={imageHeight}
               width={imageWidth}
-              style={{ objectFit: "contain" }}
+              style={{
+                objectFit: "contain",
+                width: "auto",
+                height: "auto",
+                borderTopLeftRadius: borderRadius,
+                borderTopRightRadius: borderRadius,
+              }}
             />
           </TooltipTrigger>
         </div>

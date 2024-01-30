@@ -5,6 +5,7 @@ import { convertIsoToDate } from "@utils/FormatDate";
 import Link from "next/link";
 import ImagePortableComponent from "@components/Post/PostContent/ImagePortableComponent";
 import Separator from "@components/Separator";
+import TagCard from "@components/Tag/TagCard";
 
 const PostHeader = ({ singlePost }) => {
   const { title, mainImage, publishedAt, tags } = singlePost;
@@ -33,15 +34,7 @@ const PostHeader = ({ singlePost }) => {
         </div>
         <div className="flex flex-wrap gap-5">
           {tags.map((tag) => {
-            return (
-              <Button
-                className="bg-slate-800 p-2 lowercase text-myLightGreyBlue dark:bg-myLightGreyBlue dark:text-slate-800"
-                variant="link"
-                key={tag._id}
-              >
-                <Link href={`/tag/${tag.slug.current}`}>#{tag.name}</Link>
-              </Button>
-            );
+            return <TagCard key={tag._id} tag={tag} />;
           })}
         </div>
       </div>

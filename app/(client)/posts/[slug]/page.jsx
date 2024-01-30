@@ -29,7 +29,7 @@ async function getPost(slug) {
 
 export const revalidate = 60;
 
-const PostHome = async ({ params }) => {
+const Post = async ({ params }) => {
   const post = await getPost(params.slug);
   const singlePost = post[0];
 
@@ -49,4 +49,4 @@ const PostHome = async ({ params }) => {
   );
 };
 
-export default PostHome;
+export default Post;

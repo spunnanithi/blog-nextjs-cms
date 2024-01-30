@@ -1,11 +1,11 @@
 import Header from "@components/Header";
-import PostCard from "@components/PostCard";
+import PostCard from "@components/Post/PostCard";
 import Separator from "@components/Separator";
 import { client } from "@sanity/lib/client";
 
 // Function is run on the NextJS server and NOT the client
-async function getPosts() {
-  const query = `*[_type == "post"] {
+async function getAllPosts() {
+  const query = `*[_type == "post"] | order(publishedAt desc) {
     _createdAt,
     _updatedAt,
     title,
@@ -27,16 +27,18 @@ async function getPosts() {
 export const revalidate = 60;
 
 export default async function Home() {
-  const posts = await getPosts();
+  const posts = await getAllPosts();
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col">
       <Header title="Featured Posts" />
       <Separator />
-      {posts?.length > 0 &&
-        posts?.map((post, index) => {
-          return <PostCard key={index} post={post} />;
-        })}
+      <div className="flex flex-wrap justify-center gap-10">
+        {posts?.length > 0 &&
+          posts?.map((post, index) => {
+            return <PostCard key={index} post={post} />;
+          })}
+      </div>
     </div>
   );
 }
