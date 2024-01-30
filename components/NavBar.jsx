@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const NavBar = () => {
   return (
-    <nav className="mb-5 flex h-16 w-full items-center justify-between px-6 py-10">
+    <nav className="flex h-16 w-full max-w-6xl items-center justify-between px-5 py-10">
       <Link className="flex items-center justify-center gap-4" href="/">
         <Image
           src={"/images/books.svg"}
@@ -15,9 +15,7 @@ const NavBar = () => {
         />
         <div className="text-2xl font-header">
           Dev
-          <span className="text-secondary-light dark:text-secondary-dark">
-            Journey
-          </span>
+          <span className="text-[#005A92]">Journey</span>
         </div>
       </Link>
       <ThemeSwitcher />

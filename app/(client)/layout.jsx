@@ -12,11 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} mx-auto h-full max-w-6xl bg-primary-light pb-32 text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
+        className={`${roboto.className} flex h-full flex-col items-center bg-primary-light pb-32 text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
       >
         <CustomThemeProvider>
-          {/* Header/NavBar */}
-          <header>
+          {/* NavBar */}
+          <header className="sticky top-0 z-50 m-0 flex w-full justify-center overflow-hidden bg-slate-500 p-0 dark:bg-slate-900">
             <NavBar />
           </header>
 

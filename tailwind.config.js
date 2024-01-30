@@ -31,7 +31,7 @@ module.exports = {
         },
         secondary: {
           light: "var(--color-steel-blue)",
-          dark: "var(--color-steel-blue)",
+          dark: "var(--color-grey-blue)",
         },
       },
       backgroundColor: {
@@ -56,11 +56,11 @@ module.exports = {
       },
       colors: {
         // Personally added colors
-        mySteelBlue: "#4682b4",
-        myDarkBlue: "#27374d",
-        myBlue: "#526d82",
-        myGreyBlue: "#9db2bf",
-        myLightGreyBlue: "#dde6ed",
+        mySteelBlue: "var(--color-steel-blue)",
+        myDarkBlue: "var(--color-dark-blue)",
+        myBlue: "var(--color-blue)",
+        myGreyBlue: "var(--color-grey-blue)",
+        myLightGreyBlue: "var(--color-light-grey-blue)",
 
         // Shadcn UI
         border: "hsl(var(--border))",
