@@ -4,6 +4,7 @@ import { Button } from "@components/ui/button";
 import { convertIsoToDate } from "@utils/FormatDate";
 import Link from "next/link";
 import ImagePortableComponent from "@components/Post/PostContent/ImagePortableComponent";
+import Separator from "@components/Separator";
 
 const PostHeader = ({ singlePost }) => {
   const { title, mainImage, publishedAt, tags } = singlePost;
@@ -12,7 +13,9 @@ const PostHeader = ({ singlePost }) => {
     <>
       <Header title={title} />
 
-      <div className="mb-7 flex flex-wrap justify-around">
+      <Separator />
+
+      <div className="mb-10 flex flex-wrap justify-around">
         <div>Author: Sirasit Punnanithi</div>
         <div>
           Published on: <span>{convertIsoToDate(publishedAt)}</span>
@@ -42,6 +45,7 @@ const PostHeader = ({ singlePost }) => {
           })}
         </div>
       </div>
+      <Separator />
     </>
   );
 };

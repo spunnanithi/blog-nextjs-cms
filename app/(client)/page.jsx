@@ -1,5 +1,6 @@
 import Header from "@components/Header";
 import PostCard from "@components/PostCard";
+import Separator from "@components/Separator";
 import { client } from "@sanity/lib/client";
 
 // Function is run on the NextJS server and NOT the client
@@ -31,6 +32,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col gap-5">
       <Header title="Featured Posts" />
+      <Separator />
       {posts?.length > 0 &&
         posts?.map((post, index) => {
           return <PostCard key={index} post={post} />;
