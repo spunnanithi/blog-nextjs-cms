@@ -9,6 +9,7 @@ const getAllTags = async () => {
     name,
     slug,
     _id,
+    "tagCount": count(*[_type == "post" && references("tag", ^._id)])
   }`;
 
   const data = await client.fetch(query);
@@ -28,7 +29,7 @@ const TagHome = async () => {
       <div className="flex flex-wrap justify-around">
         {tags?.length > 0 &&
           tags?.map((tag) => {
-            return <TagCard key={tag._id} tag={tag} />;
+            return <TagCard isTagCount key={tag._id} tag={tag} />;
           })}
       </div>
     </div>
