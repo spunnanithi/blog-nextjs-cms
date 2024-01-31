@@ -1,7 +1,7 @@
-import Footer from "@components/Footer";
+import Footer from "@components/Footer/Footer";
 import { roboto } from "@styles/fonts";
 import "@styles/globals.css";
-import NavBar from "components/NavBar";
+import NavBar from "@components/NavBar/NavBar";
 import CustomThemeProvider from "lib/utils/CustomThemeProvider";
 
 export const metadata = {

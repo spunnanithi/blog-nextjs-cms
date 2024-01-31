@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "@components/Header";
+import Header from "@components/reuseable/Header";
 import { Button } from "@components/ui/button";
 import { convertIsoToDate } from "@utils/FormatDate";
 import Link from "next/link";
 import ImagePortableComponent from "@components/Post/PostContent/ImagePortableComponent";
-import Separator from "@components/Separator";
+import Separator from "@components/reuseable/Separator";
 import TagCard from "@components/Tag/TagCard";
 
 const PostHeader = ({ singlePost }) => {

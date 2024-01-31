@@ -5,7 +5,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/tooltip";
+} from "../ui/tooltip";
 import { getCurrentYear } from "@utils/FormatDate";
 
 export default function Footer() {

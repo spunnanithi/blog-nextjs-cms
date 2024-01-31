@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import ThemeSwitcher from "./ThemeSwitcher";
+import ThemeSwitcher from "../reuseable/ThemeSwitcher";
 import Image from "next/image";
 
 const NavBar = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "@components/Header";
-import Separator from "@components/Separator";
+import Header from "@components/reuseable/Header";
+import Separator from "@components/reuseable/Separator";
 import { client } from "@sanity/lib/client";
 import TagCard from "@components/Tag/TagCard";
 

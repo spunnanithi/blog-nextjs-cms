@@ -1,6 +1,6 @@
-import Header from "@components/Header";
+import Header from "@components/reuseable/Header";
 import PostCard from "@components/Post/PostCard";
-import Separator from "@components/Separator";
+import Separator from "@components/reuseable/Separator";
 import { client } from "@sanity/lib/client";
 import { notFound } from "next/navigation";
 import React from "react";

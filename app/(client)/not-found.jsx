@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "@components/Header";
+import Header from "@components/reuseable/Header";
 import Link from "next/link";
-import Separator from "@components/Separator";
+import Separator from "@components/reuseable/Separator";
 import Image from "next/image";
 import { Button } from "@components/ui/button";
 
