@@ -1,5 +1,4 @@
 import { PortableText } from "@portabletext/react";
-import { client } from "@sanity/lib/client";
 import React from "react";
 import myPortableTextComponents from "@components/Post/PostContent/PortableComponent";
 import PostHeader from "@components/Post/PostHeader/PostHeader";
@@ -9,10 +8,11 @@ import {
   META_SEO_KEYWORDS,
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
+import { getSinglePost } from "@sanity/lib/queries";
 
 export async function generateMetadata({ params }) {
   const id = params.slug;
-  const post = await getPost(id);
+  const post = await getSinglePost(id);
 
   return {
     title: `${post[0]?.title} | ${WEBSITE_NAME}`,
@@ -21,34 +21,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// Function is run on the NextJS server and NOT the client
-async function getPost(slug) {
-  const query = `*[_type == "post" && slug.current == "${slug}"] {
-    _createdAt,
-    _updatedAt,
-    title,
-    slug,
-    mainImage,
-    publishedAt,
-    excerpt,
-    _id,
-    body,
-    tags[]-> {
-      _id,
-      slug,
-      name
-    }
-  }`;
-
-  const post = await client.fetch(query);
-
-  return post;
-}
-
 export const revalidate = 60;
 
 const Post = async ({ params }) => {
-  const post = await getPost(params.slug);
+  const post = await getSinglePost(params.slug);
   const singlePost = post[0];
 
   if (!singlePost) {

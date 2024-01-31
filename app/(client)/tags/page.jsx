@@ -9,6 +9,7 @@ import {
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
 import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
+import { getAllTagsQuery } from "@sanity/lib/queries";
 
 export const metadata = {
   title: `Tags | ${WEBSITE_NAME}`,
@@ -16,22 +17,10 @@ export const metadata = {
   keywords: META_SEO_KEYWORDS,
 };
 
-const getAllTags = async () => {
-  const query = `*[_type == "tag"] {
-    name,
-    slug,
-    _id,
-    "tagCount": count(*[_type == "post" && references("tag", ^._id)])
-  }`;
-
-  const data = await client.fetch(query);
-  return data;
-};
-
 export const revalidate = 60;
 
 const TagHome = async () => {
-  const tags = await getAllTags();
+  const tags = await client.fetch(getAllTagsQuery);
 
   return (
     <div className="container flex w-full flex-col">

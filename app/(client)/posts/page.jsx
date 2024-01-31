@@ -8,6 +8,7 @@ import {
   META_POST_DESCRIPTION,
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
+import { getAllPostsQuery } from "@sanity/lib/queries";
 
 export const metadata = {
   title: `Posts | ${WEBSITE_NAME}`,
@@ -15,31 +16,10 @@ export const metadata = {
   keywords: META_SEO_KEYWORDS,
 };
 
-// Function is run on the NextJS server and NOT the client
-async function getAllPosts() {
-  const query = `*[_type == "post"] | order(publishedAt desc) {
-    _createdAt,
-    _updatedAt,
-    title,
-    slug,
-    mainImage,
-    publishedAt,
-    excerpt,
-    tags[]-> {
-      _id,
-      slug,
-      name
-    }
-  }`;
-
-  const data = await client.fetch(query);
-  return data;
-}
-
 export const revalidate = 60;
 
 export default async function Home() {
-  const posts = await getAllPosts();
+  const posts = await client.fetch(getAllPostsQuery);
 
   return (
     <div className="container flex flex-col">

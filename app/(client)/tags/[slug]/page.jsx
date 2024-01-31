@@ -1,7 +1,6 @@
 import Header from "@components/reuseable/Header";
 import PostCard from "@components/Post/PostCard";
 import Separator from "@components/reuseable/Separator";
-import { client } from "@sanity/lib/client";
 import { notFound } from "next/navigation";
 import React from "react";
 import {
@@ -9,6 +8,8 @@ import {
   META_TAG_DESCRIPTION,
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
+import { getPostsPerTagQuery } from "@sanity/lib/queries";
+import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
 
 export async function generateMetadata({ params }) {
   const id = params.slug;
@@ -20,30 +21,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-async function getTag(slug) {
-  const query = `*[_type == "post" && references(*[_type == "tag" && slug.current == "${slug}"]._id)] | order(publishedAt desc) {
-      title,
-      slug,
-      mainImage,
-      publishedAt,
-      excerpt,
-      _id,
-      tags[]-> {
-        _id,
-        slug,
-        name
-      }
-  }`;
-
-  const tag = await client.fetch(query);
-
-  return tag;
-}
-
 export const revalidate = 60;
 
 const Tag = async ({ params }) => {
-  const postsPerTag = await getTag(params.slug);
+  const postsPerTag = await getPostsPerTagQuery(params.slug);
 
   if (!postsPerTag) {
     return notFound();
@@ -52,6 +33,7 @@ const Tag = async ({ params }) => {
   return (
     <div className="container flex w-full flex-col">
       <Header title={`#${params.slug}`} />
+      <ContentTypeTab />
 
       <Separator />
       <div className="flex flex-wrap justify-center gap-10">

@@ -1,7 +1,7 @@
 import moment from "moment";
 
 export const convertIsoToDate = (date) => {
-  return moment(date).format("dddd, MMMM Do, YYYY");
+  return moment(date).format("MMMM Do, YYYY");
 };
 
 export const getCurrentYear = () => {

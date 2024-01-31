@@ -27,7 +27,6 @@ const ImagePortableComponent = ({
               loading="lazy"
               src={urlForImage(value)}
               alt="alt"
-              objectFit="contain"
               height={imageHeight}
               width={imageWidth}
               style={{

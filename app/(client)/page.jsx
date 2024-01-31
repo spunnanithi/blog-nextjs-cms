@@ -4,32 +4,12 @@ import Separator from "@components/reuseable/Separator";
 import { client } from "@sanity/lib/client";
 import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
 import HeroBanner from "@components/Hero/HeroBanner";
-
-// Function is run on the NextJS server and NOT the client
-async function getAllPosts() {
-  const query = `*[_type == "post"] | order(publishedAt desc) {
-    _createdAt,
-    _updatedAt,
-    title,
-    slug,
-    mainImage,
-    publishedAt,
-    excerpt,
-    tags[]-> {
-      _id,
-      slug,
-      name
-    }
-  }`;
-
-  const data = await client.fetch(query);
-  return data;
-}
+import { getAllPostsQuery } from "@sanity/lib/queries";
 
 export const revalidate = 60;
 
 export default async function Home() {
-  const posts = await getAllPosts();
+  const posts = await client.fetch(getAllPostsQuery);
 
   return (
     <div className="flex w-full flex-col">
