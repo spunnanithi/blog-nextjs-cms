@@ -1,3 +1,4 @@
+import Footer from "@components/Footer";
 import { roboto } from "@styles/fonts";
 import "@styles/globals.css";
 import NavBar from "components/NavBar";
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} flex h-full flex-col items-center bg-primary-light pb-32 text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
+        className={`${roboto.className} flex h-full flex-col items-center bg-primary-light  text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
       >
         <CustomThemeProvider>
           {/* NavBar */}
@@ -21,9 +22,14 @@ export default function RootLayout({ children }) {
           </header>
 
           {/* Main content */}
-          <main className="flex min-h-screen w-full max-w-6xl justify-center">
+          <main className="flex min-h-screen w-full max-w-6xl justify-center pb-40">
             {children}
           </main>
+
+          {/* Footer section */}
+          <footer className="z-20 w-full bg-myGreyBlue dark:bg-slate-900">
+            <Footer />
+          </footer>
         </CustomThemeProvider>
       </body>
     </html>
