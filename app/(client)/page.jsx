@@ -32,7 +32,7 @@ export default async function Home() {
   const posts = await getAllPosts();
 
   return (
-    <div className="flex flex-col">
+    <div className="mt-10 flex flex-col">
       <Header title="Featured Posts" />
       <ContentTypeTab />
       <Separator />

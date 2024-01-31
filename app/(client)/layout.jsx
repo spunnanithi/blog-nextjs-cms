@@ -8,6 +8,7 @@ import {
   META_SEO_KEYWORDS,
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
+import HeroBanner from "@components/Hero/HeroBanner";
 
 export const metadata = {
   title: `Home | ${WEBSITE_NAME}`,
@@ -17,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <body
         className={`${roboto.className} flex h-full flex-col items-center bg-primary-light  text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
       >
@@ -27,8 +28,14 @@ export default function RootLayout({ children }) {
             <NavBar />
           </header>
 
+          {/* Hero */}
+          <HeroBanner />
+
           {/* Main content */}
-          <main className="flex min-h-screen w-full max-w-6xl justify-center pb-40">
+          <main
+            id="main"
+            className="flex min-h-screen w-full max-w-6xl justify-center pb-40"
+          >
             {children}
           </main>
 
