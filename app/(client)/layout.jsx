@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       >
         <CustomThemeProvider>
           {/* NavBar */}
-          <header className="sticky top-0 z-50 m-0 flex w-full justify-center overflow-hidden bg-slate-500 p-0 dark:bg-slate-900">
+          <header className="sticky top-0 z-50 m-0 flex w-full justify-center overflow-hidden bg-myGreyBlue p-0 dark:bg-slate-900">
             <NavBar />
           </header>
 

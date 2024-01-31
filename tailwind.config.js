@@ -62,6 +62,7 @@ module.exports = {
         myGreyBlue: "var(--color-grey-blue)",
         myLightGreyBlue: "var(--color-light-grey-blue)",
         myImperialBlue: "var(--color-imperial-blue)",
+        myDarkGreen: "var(--color-dark-green)",
 
         // Shadcn UI
         border: "hsl(var(--border))",

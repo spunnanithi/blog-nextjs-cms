@@ -14,8 +14,9 @@ const NavBar = () => {
           height="45"
         />
         <div className="text-2xl font-header">
+          <span className="text-myDarkGreen">My</span>
           Dev
-          <span className="text-[#005A92]">Journey</span>
+          <span className="text-myImperialBlue">Journey</span>
         </div>
       </Link>
       <ThemeSwitcher />

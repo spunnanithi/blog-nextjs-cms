@@ -86,7 +86,7 @@ const myPortableTextComponents = {
       );
     },
     highlight: ({ children }) => (
-      <span className="dark:text-appPurple-100 text-appRed-100 rounded-md  bg-myDarkBlue bg-opacity-15 px-2 py-2 font-mono text-sm font-bold leading-normal dark:bg-myGreyBlue">
+      <span className="rounded-md bg-myDarkBlue bg-opacity-15  px-2 py-2 font-mono text-sm font-bold leading-normal text-myLightGreyBlue dark:bg-myGreyBlue dark:text-myDarkBlue">
         {children}
       </span>
     ),
