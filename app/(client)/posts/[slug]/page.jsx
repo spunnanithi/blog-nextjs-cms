@@ -56,7 +56,7 @@ const Post = async ({ params }) => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="container flex flex-col">
       {/* Header */}
       <PostHeader singlePost={singlePost} />
 

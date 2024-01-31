@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const NavBar = () => {
   return (
-    <nav className="flex h-16 w-full max-w-6xl items-center justify-between px-5 py-10">
+    <nav className="container flex h-16 w-full items-center justify-between px-5 py-10">
       <Link className="flex items-center justify-center gap-4" href="/">
         <Image
           src={"/images/books.svg"}

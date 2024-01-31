@@ -50,7 +50,7 @@ const Tag = async ({ params }) => {
   }
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="container flex w-full flex-col">
       <Header title={`#${params.slug}`} />
 
       <Separator />

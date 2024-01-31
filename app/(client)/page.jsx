@@ -32,15 +32,18 @@ export default async function Home() {
   const posts = await getAllPosts();
 
   return (
-    <div className="mt-10 flex flex-col">
-      <Header title="Featured Posts" />
-      <ContentTypeTab />
-      <Separator />
-      <div className="flex flex-wrap justify-center gap-10">
-        {posts?.length > 0 &&
-          posts?.map((post, index) => {
-            return <PostCard key={index} post={post} />;
-          })}
+    <div className="flex w-full flex-col">
+      <HeroBanner />
+      <div id="main" className="container mt-10 flex w-full flex-col">
+        <Header title="Featured Posts" />
+        <ContentTypeTab />
+        <Separator />
+        <div className="flex flex-wrap justify-center gap-10">
+          {posts?.length > 0 &&
+            posts?.map((post, index) => {
+              return <PostCard key={index} post={post} />;
+            })}
+        </div>
       </div>
     </div>
   );

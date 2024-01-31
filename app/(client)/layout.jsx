@@ -28,14 +28,8 @@ export default function RootLayout({ children }) {
             <NavBar />
           </header>
 
-          {/* Hero */}
-          <HeroBanner />
-
           {/* Main content */}
-          <main
-            id="main"
-            className="flex min-h-screen w-full max-w-6xl justify-center pb-40"
-          >
+          <main className="flex min-h-screen w-full justify-center pb-40">
             {children}
           </main>
 

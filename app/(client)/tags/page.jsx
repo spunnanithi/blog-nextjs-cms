@@ -34,7 +34,7 @@ const TagHome = async () => {
   const tags = await getAllTags();
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="container flex w-full flex-col">
       <Header title="Tags" />
       <ContentTypeTab />
       <Separator />

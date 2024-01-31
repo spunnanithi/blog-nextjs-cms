@@ -42,7 +42,7 @@ export default async function Home() {
   const posts = await getAllPosts();
 
   return (
-    <div className="flex flex-col">
+    <div className="container flex flex-col">
       <Header title="Recent Posts" />
       <ContentTypeTab />
       <Separator />
