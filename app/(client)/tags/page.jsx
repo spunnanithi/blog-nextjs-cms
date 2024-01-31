@@ -7,7 +7,8 @@ import {
   META_SEO_KEYWORDS,
   META_TAG_DESCRIPTION,
   WEBSITE_NAME,
-} from "constants/_APP_CONSTANTS";
+} from "@constants/_APP_CONSTANTS";
+import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
 
 export const metadata = {
   title: `Tags | ${WEBSITE_NAME}`,
@@ -35,6 +36,7 @@ const TagHome = async () => {
   return (
     <div className="flex w-full flex-col">
       <Header title="Tags" />
+      <ContentTypeTab />
       <Separator />
 
       <div className="flex flex-wrap justify-around">

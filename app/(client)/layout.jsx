@@ -7,7 +7,7 @@ import {
   META_HOME_DESCRIPTION,
   META_SEO_KEYWORDS,
   WEBSITE_NAME,
-} from "constants/_APP_CONSTANTS";
+} from "@constants/_APP_CONSTANTS";
 
 export const metadata = {
   title: `Home | ${WEBSITE_NAME}`,

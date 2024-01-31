@@ -8,7 +8,7 @@ import {
   META_SEO_KEYWORDS,
   META_TAG_DESCRIPTION,
   WEBSITE_NAME,
-} from "constants/_APP_CONSTANTS";
+} from "@constants/_APP_CONSTANTS";
 
 export async function generateMetadata({ params }) {
   const id = params.slug;

@@ -2,6 +2,7 @@ import Header from "@components/reuseable/Header";
 import PostCard from "@components/Post/PostCard";
 import Separator from "@components/reuseable/Separator";
 import { client } from "@sanity/lib/client";
+import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
 
 // Function is run on the NextJS server and NOT the client
 async function getAllPosts() {
@@ -32,6 +33,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col">
       <Header title="Featured Posts" />
+      <ContentTypeTab />
       <Separator />
       <div className="flex flex-wrap justify-center gap-10">
         {posts?.length > 0 &&

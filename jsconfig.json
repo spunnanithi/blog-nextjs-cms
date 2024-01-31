@@ -5,7 +5,9 @@
       "@components/*": ["components/*"],
       "@utils/*": ["lib/utils/*"],
       "@styles/*": ["styles/*"],
-      "@sanity/*": ["sanity/*"]
+      "@sanity/*": ["sanity/*"],
+      "@data/*": ["data/*"],
+      "@constants/*": ["constants/*"],
     }
   },
   "include": ["next-env.d.js", "**/*.js", "**/*.jsx", ".prettierrc.json"],
