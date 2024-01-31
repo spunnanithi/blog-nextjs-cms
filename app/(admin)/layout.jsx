@@ -1,6 +1,6 @@
 import { roboto } from "@styles/fonts";
 import "@styles/globals.css";
-import CMSNavBar from "@components/CMSNavBar";
+import CMSNavBar from "@components/CmsNavBar";
 import CustomThemeProvider from "lib/utils/CustomThemeProvider";
 
 export const metadata = {
