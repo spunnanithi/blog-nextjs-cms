@@ -4,6 +4,22 @@ import React from "react";
 import myPortableTextComponents from "@components/Post/PostContent/PortableComponent";
 import PostHeader from "@components/Post/PostHeader/PostHeader";
 import { notFound } from "next/navigation";
+import {
+  META_POST_DESCRIPTION,
+  META_SEO_KEYWORDS,
+  WEBSITE_NAME,
+} from "constants/_APP_CONSTANTS";
+
+export async function generateMetadata({ params }) {
+  const id = params.slug;
+  const post = await getPost(id);
+
+  return {
+    title: `${post[0]?.title} | ${WEBSITE_NAME}`,
+    description: META_POST_DESCRIPTION,
+    keywords: META_SEO_KEYWORDS,
+  };
+}
 
 // Function is run on the NextJS server and NOT the client
 async function getPost(slug) {

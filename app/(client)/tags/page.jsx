@@ -3,6 +3,17 @@ import Header from "@components/reuseable/Header";
 import Separator from "@components/reuseable/Separator";
 import { client } from "@sanity/lib/client";
 import TagCard from "@components/Tag/TagCard";
+import {
+  META_SEO_KEYWORDS,
+  META_TAG_DESCRIPTION,
+  WEBSITE_NAME,
+} from "constants/_APP_CONSTANTS";
+
+export const metadata = {
+  title: `Tags | ${WEBSITE_NAME}`,
+  description: META_TAG_DESCRIPTION,
+  keywords: META_SEO_KEYWORDS,
+};
 
 const getAllTags = async () => {
   const query = `*[_type == "tag"] {

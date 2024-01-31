@@ -3,10 +3,16 @@ import { roboto } from "@styles/fonts";
 import "@styles/globals.css";
 import NavBar from "@components/NavBar/NavBar";
 import CustomThemeProvider from "lib/utils/CustomThemeProvider";
+import {
+  META_HOME_DESCRIPTION,
+  META_SEO_KEYWORDS,
+  WEBSITE_NAME,
+} from "constants/_APP_CONSTANTS";
 
 export const metadata = {
-  title: "DevJourney",
-  description: "My personal blog site.",
+  title: `Home | ${WEBSITE_NAME}`,
+  description: META_HOME_DESCRIPTION,
+  keywords: META_SEO_KEYWORDS,
 };
 
 export default function RootLayout({ children }) {
