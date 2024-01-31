@@ -19,12 +19,11 @@ const ContentTypeTab = () => {
             ? "shadow-lg border-4 border-myDarkBlue text-myBlue hover:text-myImperialBlue hover:bg-myGreyBlue dark:border-myLightGreyBlue dark:text-myGreyBlue dark:hover:text-myImperialBlue dark:hover:bg-myBlue"
             : "";
           return (
-            <li>
+            <li key={index}>
               <Link href={type.url}>
                 <Button
                   variant="ghost"
                   className={`w-auto transform cursor-pointer px-8 py-6 text-2xl font-bold  transition-all hover:scale-105 hover:bg-transparent hover:text-myImperialBlue hover:shadow-none md:mx-5 ${activeLinkClass}`}
-                  key={index}
                 >
                   {type.name}
                 </Button>

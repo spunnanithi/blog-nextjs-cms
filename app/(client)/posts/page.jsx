@@ -3,7 +3,17 @@ import PostCard from "@components/Post/PostCard";
 import Separator from "@components/reuseable/Separator";
 import { client } from "@sanity/lib/client";
 import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
-import HeroBanner from "@components/Hero/HeroBanner";
+import {
+  META_SEO_KEYWORDS,
+  META_POST_DESCRIPTION,
+  WEBSITE_NAME,
+} from "@constants/_APP_CONSTANTS";
+
+export const metadata = {
+  title: `Posts | ${WEBSITE_NAME}`,
+  description: META_POST_DESCRIPTION,
+  keywords: META_SEO_KEYWORDS,
+};
 
 // Function is run on the NextJS server and NOT the client
 async function getAllPosts() {
@@ -33,7 +43,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <Header title="Featured Posts" />
+      <Header title="Recent Posts" />
       <ContentTypeTab />
       <Separator />
       <div className="flex flex-wrap justify-center gap-10">
