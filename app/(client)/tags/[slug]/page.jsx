@@ -2,6 +2,7 @@ import Header from "@components/Header";
 import PostCard from "@components/Post/PostCard";
 import Separator from "@components/Separator";
 import { client } from "@sanity/lib/client";
+import { notFound } from "next/navigation";
 import React from "react";
 
 async function getTag(slug) {
@@ -20,6 +21,7 @@ async function getTag(slug) {
   }`;
 
   const tag = await client.fetch(query);
+
   return tag;
 }
 
@@ -27,6 +29,10 @@ export const revalidate = 60;
 
 const Tag = async ({ params }) => {
   const postsPerTag = await getTag(params.slug);
+
+  if (!postsPerTag) {
+    return notFound();
+  }
 
   return (
     <div className="flex w-full flex-col">
