@@ -34,7 +34,7 @@ export default async function Home() {
   return (
     <div className="flex w-full flex-col">
       <HeroBanner />
-      <div id="main" className="container mt-10 flex w-full flex-col">
+      <div id="main" className="container flex w-full flex-col pt-20">
         <Header title="Featured Posts" />
         <ContentTypeTab />
         <Separator />
