@@ -35,26 +35,23 @@ const PostCard = ({ post }) => {
             {post?.title}
           </CardTitle>
           <CardDescription className="flex flex-col flex-wrap gap-5">
-            <span className="mt-2 flex items-center gap-5">
+            <span className="mt-2 flex items-center gap-5 text-base">
               <AuthorAvatar
                 src={urlForImage(post?.author?.avatar?.asset?._ref)}
                 alt={post?.author?.avatar?.alt}
               />
-
-              <span className="font-title text-myImperialBlue dark:text-slate-900">
+              <span className="text-base font-title text-myImperialBlue dark:text-slate-900">
                 {post?.author?.name}
               </span>
             </span>
-            <div className="">
-              <span className="font-title text-myImperialBlue dark:text-slate-900">
-                {convertIsoToDate(post?.publishedAt)} |{" "}
-                {`${post?.estimatedReadingTime} mins`}
-              </span>
-            </div>
+            <span className="text-base font-subtitle text-myImperialBlue dark:text-slate-900">
+              {convertIsoToDate(post?.publishedAt)} |{" "}
+              {`${post?.estimatedReadingTime} mins`}
+            </span>
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div>{post?.excerpt}</div>
+        <CardContent className="text-sm text-slate-800 dark:text-slate-200">
+          {post?.excerpt}
         </CardContent>
       </Link>
       <CardFooter className="flex flex-col items-start gap-5">
