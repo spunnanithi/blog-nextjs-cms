@@ -28,11 +28,11 @@ export async function getSinglePost(slug) {
     excerpt,
     _id,
     body,
-    tags[]-> {
-      _id,
-      slug,
-      name
-    }
+    author -> { name, slug, avatar },
+    "numberOfCharacters": length(pt::text(body)),
+    "estimatedWordCount": round(length(pt::text(body)) / 5),
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
+    tags[]-> { _id, slug, name }
   }`;
 
   const post = await client.fetch(query);
