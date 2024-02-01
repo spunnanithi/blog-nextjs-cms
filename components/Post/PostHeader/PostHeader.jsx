@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "@components/reuseable/Header";
-import { convertIsoToDate } from "@utils/FormatDate";
+import { convertIsoToDate, convertIsoToFromNow } from "@utils/FormatDate";
 import ImagePortableComponent from "@components/Post/PostContent/ImagePortableComponent";
 import Separator from "@components/reuseable/Separator";
 import TagCard from "@components/Tag/TagCard";
@@ -18,14 +18,14 @@ const PostHeader = ({ singlePost }) => {
 
       <Separator />
 
-      <div className="mb-10 flex flex-wrap items-center justify-around">
+      <div className="mb-10 flex flex-wrap items-center justify-around gap-10 font-title">
         <div className="flex items-center gap-5">
           <AuthorAvatar
-            src={urlForImage(singlePost?.author?.avatar?.asset?._ref)}
-            alt={singlePost?.author?.avatar?.alt}
+            src={urlForImage(author?.avatar?.asset?._ref)}
+            alt={author?.avatar?.alt}
           />
 
-          <span className="font-title">{singlePost?.author?.name}</span>
+          <span className="">{author?.name}</span>
         </div>
         <div>
           <span>{convertIsoToDate(publishedAt)}</span>
@@ -48,6 +48,14 @@ const PostHeader = ({ singlePost }) => {
             imageWidth={1100}
             value={mainImage}
           />
+        </div>
+        <div>
+          <div>
+            Last Updated:{" "}
+            <span className="font-title text-myDarkGreen">
+              {convertIsoToFromNow(singlePost?._updatedAt)}
+            </span>
+          </div>
         </div>
         <div className="flex flex-wrap gap-5">
           {tags.map((tag) => {

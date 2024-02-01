@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 import { client } from "./client";
 
 // ------------------------------------ Posts ------------------------------------ \\
-export const getAllPostsQuery = groq`*[_type == "post"] | order(_createdAt desc) {
+export const getAllPostsQuery = groq`*[_type == "post"] | order(publishedAt desc) {
   _createdAt,
   _updatedAt,
   title,

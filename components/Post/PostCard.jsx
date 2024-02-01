@@ -17,7 +17,7 @@ import AuthorAvatar from "@components/Author/AuthorAvatar";
 
 const PostCard = ({ post }) => {
   const cardClassNames =
-    "flex flex-col justify-between transform transition duration-300 bg-myGreyBlue shadow-sm shadow-myDarkBlue border-b-8 border-myImperialBlue dark:border-mySteelBlue hover:scale-105 hover:shadow-md dark:bg-myBlue dark:shadow-mySteelBlue";
+    "flex flex-col justify-between transform transition duration-300 bg-myGreyBlue shadow-sm hover:shadow-myDarkBlue border-b-8 border-b-myImperialBlue dark:border-b-myImperialBlue hover:scale-105 hover:shadow-md dark:bg-myBlue dark:shadow-mySteelBlue";
 
   return (
     <Card className={cn("w-[350px]", cardClassNames)}>
@@ -25,7 +25,7 @@ const PostCard = ({ post }) => {
         <div className="flex flex-shrink-0 justify-center">
           <ImagePortableComponent
             value={post?.mainImage}
-            imageWidth={300}
+            imageWidth={350}
             imageHeight={100}
             borderRadius={8}
           />
@@ -35,6 +35,10 @@ const PostCard = ({ post }) => {
             {post?.title}
           </CardTitle>
           <CardDescription className="flex flex-col flex-wrap gap-5">
+            <span className="mt-2 text-base font-subtitle text-myImperialBlue dark:text-slate-900">
+              {convertIsoToDate(post?.publishedAt)} |{" "}
+              {`${post?.estimatedReadingTime} mins`}
+            </span>
             <span className="mt-2 flex items-center gap-5 text-base">
               <AuthorAvatar
                 src={urlForImage(post?.author?.avatar?.asset?._ref)}
@@ -43,10 +47,6 @@ const PostCard = ({ post }) => {
               <span className="text-base font-title text-myImperialBlue dark:text-slate-900">
                 {post?.author?.name}
               </span>
-            </span>
-            <span className="text-base font-subtitle text-myImperialBlue dark:text-slate-900">
-              {convertIsoToDate(post?.publishedAt)} |{" "}
-              {`${post?.estimatedReadingTime} mins`}
             </span>
           </CardDescription>
         </CardHeader>
