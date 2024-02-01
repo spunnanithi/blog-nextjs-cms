@@ -8,7 +8,6 @@ import {
   META_SEO_KEYWORDS,
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
-import HeroBanner from "@components/Hero/HeroBanner";
 
 export const metadata = {
   title: `Home | ${WEBSITE_NAME}`,

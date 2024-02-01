@@ -10,6 +10,7 @@ import {
 } from "@constants/_APP_CONSTANTS";
 import { getPostsPerTagQuery } from "@sanity/lib/queries";
 import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
+import sanityFetch from "@sanity/lib/sanityFetch";
 
 export async function generateMetadata({ params }) {
   const id = params.slug;
@@ -24,7 +25,9 @@ export async function generateMetadata({ params }) {
 export const revalidate = 60;
 
 const Tag = async ({ params }) => {
-  const postsPerTag = await getPostsPerTagQuery(params.slug);
+  const postsPerTag = await sanityFetch(getPostsPerTagQuery, {
+    slug: params.slug,
+  });
 
   if (!postsPerTag) {
     return notFound();

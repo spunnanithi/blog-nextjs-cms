@@ -8,11 +8,11 @@ import {
   META_SEO_KEYWORDS,
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
-import { getSinglePost } from "@sanity/lib/queries";
+import { getSinglePostQuery } from "@sanity/lib/queries";
+import sanityFetch from "@sanity/lib/sanityFetch";
 
 export async function generateMetadata({ params }) {
-  const id = params.slug;
-  const post = await getSinglePost(id);
+  const post = await sanityFetch(getSinglePostQuery, { slug: params.slug });
 
   return {
     title: `${post[0]?.title} | ${WEBSITE_NAME}`,
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
 export const revalidate = 60;
 
 const Post = async ({ params }) => {
-  const post = await getSinglePost(params.slug);
+  const post = await sanityFetch(getSinglePostQuery, { slug: params.slug });
   const singlePost = post[0];
 
   if (!singlePost) {

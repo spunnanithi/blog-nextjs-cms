@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "@components/reuseable/Header";
 import Separator from "@components/reuseable/Separator";
-import { client } from "@sanity/lib/client";
 import TagCard from "@components/Tag/TagCard";
 import {
   META_SEO_KEYWORDS,
@@ -10,6 +9,7 @@ import {
 } from "@constants/_APP_CONSTANTS";
 import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
 import { getAllTagsQuery } from "@sanity/lib/queries";
+import sanityFetch from "@sanity/lib/sanityFetch";
 
 export const metadata = {
   title: `Tags | ${WEBSITE_NAME}`,
@@ -20,7 +20,7 @@ export const metadata = {
 export const revalidate = 60;
 
 const TagHome = async () => {
-  const tags = await client.fetch(getAllTagsQuery);
+  const tags = await sanityFetch(getAllTagsQuery);
 
   return (
     <div className="container flex w-full flex-col">

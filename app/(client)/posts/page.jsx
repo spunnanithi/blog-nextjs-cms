@@ -1,7 +1,6 @@
 import Header from "@components/reuseable/Header";
 import PostCard from "@components/Post/PostCard";
 import Separator from "@components/reuseable/Separator";
-import { client } from "@sanity/lib/client";
 import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
 import {
   META_SEO_KEYWORDS,
@@ -9,6 +8,7 @@ import {
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
 import { getAllPostsQuery } from "@sanity/lib/queries";
+import sanityFetch from "@sanity/lib/sanityFetch";
 
 export const metadata = {
   title: `Posts | ${WEBSITE_NAME}`,
@@ -19,7 +19,7 @@ export const metadata = {
 export const revalidate = 60;
 
 export default async function Home() {
-  const posts = await client.fetch(getAllPostsQuery);
+  const posts = await sanityFetch(getAllPostsQuery);
 
   return (
     <div className="container flex flex-col">

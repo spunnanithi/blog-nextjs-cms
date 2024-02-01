@@ -1,5 +1,4 @@
 import { groq } from "next-sanity";
-import { client } from "./client";
 
 // ------------------------------------ Posts ------------------------------------ \\
 export const getAllPostsQuery = groq`*[_type == "post"] | order(publishedAt desc) {
@@ -17,8 +16,7 @@ export const getAllPostsQuery = groq`*[_type == "post"] | order(publishedAt desc
   "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
 }`;
 
-export async function getSinglePost(slug) {
-  const query = `*[_type == "post" && slug.current == "${slug}"] {
+export const getSinglePostQuery = groq`*[_type == "post" && slug.current == $slug] {
     _createdAt,
     _updatedAt,
     title,
@@ -33,12 +31,7 @@ export async function getSinglePost(slug) {
     "estimatedWordCount": round(length(pt::text(body)) / 5),
     "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
     tags[]-> { _id, slug, name }
-  }`;
-
-  const post = await client.fetch(query);
-
-  return post;
-}
+}`;
 
 // ------------------------------------ Tags ------------------------------------ \\
 export const getAllTagsQuery = groq`*[_type == "tag"] {
@@ -48,8 +41,7 @@ export const getAllTagsQuery = groq`*[_type == "tag"] {
   "tagCount": count(*[_type == "post" && references("tag", ^._id)])
 }`;
 
-export async function getPostsPerTagQuery(slug) {
-  const query = `*[_type == "post" && references(*[_type == "tag" && slug.current == "${slug}"]._id)] | order(publishedAt desc) {
+export const getPostsPerTagQuery = groq`*[_type == "post" && references(*[_type == "tag" && slug.current == $slug]._id)] | order(publishedAt desc) {
       title,
       slug,
       mainImage,
@@ -62,8 +54,3 @@ export async function getPostsPerTagQuery(slug) {
       "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
       tags[]-> {_id,slug,name}
   }`;
-
-  const tag = await client.fetch(query);
-
-  return tag;
-}
