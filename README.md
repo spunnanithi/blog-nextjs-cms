@@ -6,6 +6,28 @@ Welcome to the MyDevJourney Blog project! This project aims to create an impress
 
 Demo link: [MyDevJourney](https://mydevjourney.vercel.app/)
 
+<table>
+  <tr>
+    <td>Landing Page (Dark Mode)</td>
+    <td>Landing Page (Light Mode)</td>
+  </tr>
+  <tr>
+    <td><img src="./public/markdown/main-dark.png"></td>
+    <td><img src="./public/markdown/main-light.png"></td>
+  </tr>
+ </table>
+
+<table>
+  <tr>
+    <td>Post Page (Dark Mode)</td>
+    <td>Post Page (Light Mode)</td>
+  </tr>
+  <tr>
+    <td><img src="./public/markdown/post-dark.png"></td>
+    <td><img src="./public/markdown/post-light.png"></td>
+  </tr>
+ </table>
+
 ## Built with
 
 - [NextJS](https://nextjs.org/) - Enables ability to create high-quality web applications with the power of React components and client/server side rendering.
@@ -13,6 +35,11 @@ Demo link: [MyDevJourney](https://mydevjourney.vercel.app/)
 - [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework that streamlines web development by providing a set of pre-designed, low-level utility classes for building modern and responsive user interfaces.
 - [shadcn/ui](https://ui.shadcn.com/) - Highly customizable, re-useable component library that is easy to copy and paste into code base.
 - [Vercel](https://vercel.com/) - Fast, easy cloud deployment of frontend applications.
+
+## Features
+
+- Dark/light mode
+- Sanity Studio integration
 
 ## Requirements
 
@@ -122,6 +149,18 @@ yarn dev
 pnpm dev
 # or
 bun dev
+```
+
+2. Once ready for production, build Next.js project:
+
+```bash
+npm run build
+```
+
+3. Start Next.js production server:
+
+```bash
+npm run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

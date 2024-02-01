@@ -44,7 +44,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className="container mx-auto flex flex-wrap items-center justify-center px-4 py-14 md:justify-around">
+      <div className="container mx-auto flex flex-wrap items-center justify-center gap-20 px-4 py-14 md:justify-around">
         <div className="flex flex-wrap justify-center">
           <ul className="flex items-center gap-7">
             <TooltipProvider>
@@ -63,7 +63,7 @@ export default function Footer() {
             </TooltipProvider>
           </ul>
         </div>
-        <div className="mt-4 flex justify-center gap-7 lg:mt-0">
+        <div className="flex items-center justify-center gap-7 lg:mt-0">
           <TooltipProvider>
             {socialMediaAccounts.map((account) => {
               return (
