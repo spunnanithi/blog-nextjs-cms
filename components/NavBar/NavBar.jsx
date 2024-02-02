@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import ThemeSwitcher from "../reuseable/ThemeSwitcher";
 import Image from "next/image";
+
+// Dynamic imports
+import { ThemeSwitcher } from "@components/index";
 
 const NavBar = () => {
   return (

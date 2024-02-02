@@ -10,10 +10,11 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import TagCard from "../Tag/TagCard";
 import { cn } from "lib/utils";
 import { urlForImage } from "@sanity/lib/image";
-import AuthorAvatar from "@components/Author/AuthorAvatar";
+
+// Dynamic imports
+import { AuthorAvatar, TagCard } from "@components/index";
 
 const PostCard = ({ post }) => {
   const cardClassNames =

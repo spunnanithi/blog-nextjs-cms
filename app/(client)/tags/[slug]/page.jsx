@@ -1,6 +1,3 @@
-import Header from "@components/reuseable/Header";
-import PostCard from "@components/Post/PostCard";
-import Separator from "@components/reuseable/Separator";
 import { notFound } from "next/navigation";
 import React from "react";
 import {
@@ -9,8 +6,10 @@ import {
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
 import { getPostsPerTagQuery } from "@sanity/lib/queries";
-import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
 import sanityFetch from "@sanity/lib/sanityFetch";
+
+// Dynamic imports
+import { Header, PostCard, Separator, ContentTypeTab } from "@components/index";
 
 export async function generateMetadata({ params }) {
   const id = params.slug;

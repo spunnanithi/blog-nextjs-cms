@@ -1,12 +1,11 @@
 import React from "react";
-import Header from "@components/reuseable/Header";
 import { convertIsoToDate, convertIsoToFromNow } from "@utils/FormatDate";
 import ImagePortableComponent from "@components/Post/PostContent/ImagePortableComponent";
-import Separator from "@components/reuseable/Separator";
-import TagCard from "@components/Tag/TagCard";
-import AuthorAvatar from "@components/Author/AuthorAvatar";
 import { urlForImage } from "@sanity/lib/image";
 import Image from "next/image";
+
+// Dynamic imports
+import { TagCard, Separator, Header, AuthorAvatar } from "@components/index";
 
 const PostHeader = ({ singlePost }) => {
   const { title, mainImage, publishedAt, tags, author, estimatedReadingTime } =

@@ -1,7 +1,3 @@
-import Header from "@components/reuseable/Header";
-import PostCard from "@components/Post/PostCard";
-import Separator from "@components/reuseable/Separator";
-import ContentTypeTab from "@components/ContentTypeTab/ContentTypeTab";
 import {
   META_SEO_KEYWORDS,
   META_POST_DESCRIPTION,
@@ -9,6 +5,9 @@ import {
 } from "@constants/_APP_CONSTANTS";
 import { getAllPostsQuery } from "@sanity/lib/queries";
 import sanityFetch from "@sanity/lib/sanityFetch";
+
+// Dynamic imports
+import { Header, PostCard, Separator, ContentTypeTab } from "@components/index";
 
 export const metadata = {
   title: `Posts | ${WEBSITE_NAME}`,

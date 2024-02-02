@@ -1,13 +1,14 @@
-import Footer from "@components/Footer/Footer";
-import { roboto } from "@styles/fonts";
 import "@styles/globals.css";
-import NavBar from "@components/NavBar/NavBar";
+import { roboto } from "@styles/fonts";
 import CustomThemeProvider from "lib/utils/CustomThemeProvider";
 import {
   META_HOME_DESCRIPTION,
   META_SEO_KEYWORDS,
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
+
+// Dynamic imports
+import { NavBar, Footer } from "@components/index";
 
 export const metadata = {
   title: `Home | ${WEBSITE_NAME}`,

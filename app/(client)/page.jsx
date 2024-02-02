@@ -1,11 +1,10 @@
-import Header from "@components/reuseable/Header";
-import PostCard from "@components/Post/PostCard";
-import Separator from "@components/reuseable/Separator";
 import { client } from "@sanity/lib/client";
-import HeroBanner from "@components/Hero/HeroBanner";
 import { getAllPostsQuery } from "@sanity/lib/queries";
 import { Button } from "@components/ui/button";
 import Link from "next/link";
+
+// Dynamic imports
+import { HeroBanner, Header, Separator, PostCard } from "@components/index";
 
 export const revalidate = 60;
 

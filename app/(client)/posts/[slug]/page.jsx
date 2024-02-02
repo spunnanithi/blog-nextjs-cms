@@ -1,7 +1,7 @@
 import { PortableText } from "@portabletext/react";
 import React from "react";
 import myPortableTextComponents from "@components/Post/PostContent/PortableComponent";
-import PostHeader from "@components/Post/PostHeader/PostHeader";
+// import PostHeader from "@components/Post/PostHeader/PostHeader";
 import { notFound } from "next/navigation";
 import {
   META_POST_DESCRIPTION,
@@ -10,6 +10,9 @@ import {
 } from "@constants/_APP_CONSTANTS";
 import { getSinglePostQuery } from "@sanity/lib/queries";
 import sanityFetch from "@sanity/lib/sanityFetch";
+
+// Dynamic imports
+import { PostHeader } from "@components/index";
 
 export async function generateMetadata({ params }) {
   const post = await sanityFetch(getSinglePostQuery, { slug: params.slug });
