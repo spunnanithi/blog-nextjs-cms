@@ -1,11 +1,16 @@
 import React from "react";
 import { convertIsoToDate, convertIsoToFromNow } from "@utils/FormatDate";
-import ImagePortableComponent from "@components/Post/PostContent/ImagePortableComponent";
 import { urlForImage } from "@sanity/lib/image";
 import Image from "next/image";
 
 // Dynamic imports
-import { TagCard, Separator, Header, AuthorAvatar } from "@components/index";
+import {
+  TagCard,
+  Separator,
+  Header,
+  AuthorAvatar,
+  ImagePortableComponent,
+} from "@components/index";
 
 const PostHeader = ({ singlePost }) => {
   const { title, mainImage, publishedAt, tags, author, estimatedReadingTime } =
@@ -27,7 +32,7 @@ const PostHeader = ({ singlePost }) => {
           <span className="">{author?.name}</span>
         </div>
         <div>
-          <span>{convertIsoToDate(publishedAt)}</span>
+          <span>PUBLISHED: {convertIsoToDate(publishedAt)}</span>
         </div>
         <div className="flex items-center gap-3">
           <Image
@@ -40,7 +45,7 @@ const PostHeader = ({ singlePost }) => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-5">
+      <div className=" flex  flex-col items-center gap-5">
         <div>
           <ImagePortableComponent
             imageHeight={1000}

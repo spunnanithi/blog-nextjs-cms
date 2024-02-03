@@ -7,6 +7,9 @@ export const ContentTypeTab = dynamic(
 export const Footer = dynamic(() => import("./Footer/Footer"));
 export const HeroBanner = dynamic(() => import("./Hero/HeroBanner"));
 export const Header = dynamic(() => import("./reuseable/Header"));
+export const ImagePortableComponent = dynamic(
+  () => import("./Post/PostContent/ImagePortableComponent"),
+);
 export const NavBar = dynamic(() => import("./NavBar/NavBar"));
 export const Separator = dynamic(() => import("./reuseable/Separator"));
 export const PostCard = dynamic(() => import("./Post/PostCard"));

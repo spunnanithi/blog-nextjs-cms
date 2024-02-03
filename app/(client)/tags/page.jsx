@@ -16,10 +16,21 @@ export const metadata = {
   keywords: META_SEO_KEYWORDS,
 };
 
-export const revalidate = 60;
+export const revalidate = 15;
+
+const getAllTags = async () => {
+  const tags = await sanityFetch(getAllTagsQuery);
+
+  if (!tags) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch tags");
+  }
+
+  return tags;
+};
 
 const TagHome = async () => {
-  const tags = await sanityFetch(getAllTagsQuery);
+  const tags = await getAllTags();
 
   return (
     <div className="container flex w-full flex-col">
@@ -27,7 +38,7 @@ const TagHome = async () => {
       <ContentTypeTab />
       <Separator />
 
-      <div className="flex flex-wrap justify-around">
+      <div className="flex flex-wrap justify-around gap-5">
         {tags?.length > 0 &&
           tags?.map((tag) => {
             return <TagCard isTagCount key={tag._id} tag={tag} />;

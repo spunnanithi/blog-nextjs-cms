@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { convertIsoToDate } from "@utils/FormatDate";
-import ImagePortableComponent from "./PostContent/ImagePortableComponent";
 import {
   Card,
   CardContent,
@@ -14,7 +13,11 @@ import { cn } from "lib/utils";
 import { urlForImage } from "@sanity/lib/image";
 
 // Dynamic imports
-import { AuthorAvatar, TagCard } from "@components/index";
+import {
+  AuthorAvatar,
+  TagCard,
+  ImagePortableComponent,
+} from "@components/index";
 
 const PostCard = ({ post }) => {
   const cardClassNames =

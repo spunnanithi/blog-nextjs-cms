@@ -24,9 +24,10 @@ const ImagePortableComponent = ({
         <div className="flex flex-col items-center justify-center">
           <TooltipTrigger>
             <Image
-              loading="lazy"
               src={urlForImage(value)}
               alt="alt"
+              blurDataURL={urlForImage(value)}
+              placeholder="blur"
               height={imageHeight}
               width={imageWidth}
               style={{

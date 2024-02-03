@@ -1,7 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import React from "react";
 import myPortableTextComponents from "@components/Post/PostContent/PortableComponent";
-// import PostHeader from "@components/Post/PostHeader/PostHeader";
 import { notFound } from "next/navigation";
 import {
   META_POST_DESCRIPTION,
@@ -24,11 +23,21 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export const revalidate = 60;
+export const revalidate = 15;
+
+const getSinglePost = async (params) => {
+  const post = await sanityFetch(getSinglePostQuery, { slug: params.slug });
+
+  if (!post) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch post");
+  }
+
+  return post[0];
+};
 
 const Post = async ({ params }) => {
-  const post = await sanityFetch(getSinglePostQuery, { slug: params.slug });
-  const singlePost = post[0];
+  const singlePost = await getSinglePost(params);
 
   if (!singlePost) {
     return notFound();

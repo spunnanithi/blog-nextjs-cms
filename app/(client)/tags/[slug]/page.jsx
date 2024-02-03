@@ -21,12 +21,23 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export const revalidate = 60;
+export const revalidate = 15;
 
-const Tag = async ({ params }) => {
+const getPostsPerTag = async (params) => {
   const postsPerTag = await sanityFetch(getPostsPerTagQuery, {
     slug: params.slug,
   });
+
+  if (!postsPerTag) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch posts per tag");
+  }
+
+  return postsPerTag;
+};
+
+const Tag = async ({ params }) => {
+  const postsPerTag = getPostsPerTag(params);
 
   if (!postsPerTag) {
     return notFound();

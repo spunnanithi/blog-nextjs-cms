@@ -15,10 +15,21 @@ export const metadata = {
   keywords: META_SEO_KEYWORDS,
 };
 
-export const revalidate = 60;
+export const revalidate = 15;
+
+const getAllPosts = async () => {
+  const posts = await sanityFetch(getAllPostsQuery);
+
+  if (!posts) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch posts");
+  }
+
+  return posts;
+};
 
 export default async function Home() {
-  const posts = await sanityFetch(getAllPostsQuery);
+  const posts = await getAllPosts();
 
   return (
     <div className="container flex flex-col">
