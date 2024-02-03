@@ -37,7 +37,7 @@ const getPostsPerTag = async (params) => {
 };
 
 const Tag = async ({ params }) => {
-  const postsPerTag = getPostsPerTag(params);
+  const postsPerTag = await getPostsPerTag(params);
 
   if (!postsPerTag) {
     return notFound();
