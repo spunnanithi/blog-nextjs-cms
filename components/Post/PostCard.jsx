@@ -15,8 +15,9 @@ import { urlForImage } from "@sanity/lib/image";
 // Dynamic imports
 import {
   AuthorAvatar,
-  TagCard,
+  PostTagCard,
   ImagePortableComponent,
+  Separator,
 } from "@components/index";
 
 const PostCard = ({ post }) => {
@@ -34,35 +35,47 @@ const PostCard = ({ post }) => {
             borderRadius={8}
           />
         </div>
+
+        {/* Card Header */}
         <CardHeader className="text-header font-header">
           <CardTitle className="hover:underline hover:underline-offset-4">
             {post?.title}
           </CardTitle>
           <CardDescription className="flex flex-col flex-wrap gap-5">
-            <span className="mt-2 text-base font-subtitle text-myImperialBlue dark:text-slate-900">
+            <span className="mt-6 text-base font-subtitle text-myImperialBlue dark:text-slate-900">
               {convertIsoToDate(post?.publishedAt)} |{" "}
               {`${post?.estimatedReadingTime} mins`}
             </span>
-            <span className="mt-2 flex items-center gap-5 text-base">
-              <AuthorAvatar
-                src={urlForImage(post?.author?.avatar?.asset?._ref)}
-                alt={post?.author?.avatar?.alt}
-              />
-              <span className="text-base font-title text-myImperialBlue dark:text-slate-900">
-                {post?.author?.name}
-              </span>
-            </span>
           </CardDescription>
         </CardHeader>
+
+        {/* Card Content */}
         <CardContent className="text-sm text-slate-800 dark:text-slate-200">
           {post?.excerpt}
         </CardContent>
       </Link>
-      <CardFooter className="flex flex-col items-start gap-5">
-        <div className="flex flex-wrap gap-3">
-          {post?.tags?.map((tag) => {
-            return <TagCard key={tag._id} tag={tag} />;
-          })}
+
+      {/* Card Footer */}
+      <CardFooter className="flex flex-col items-start gap-2">
+        <span className="flex items-center gap-5 text-base">
+          <AuthorAvatar
+            src={urlForImage(post?.author?.avatar?.asset?._ref)}
+            alt={post?.author?.avatar?.alt}
+          />
+          <span className="text-base font-title text-myImperialBlue dark:text-slate-900">
+            {post?.author?.name}
+          </span>
+        </span>
+        <div>
+          <ul className="no-scrollbar flex max-w-[300px] flex-row gap-3 overflow-x-auto">
+            {post?.tags?.map((tag) => {
+              return (
+                <li>
+                  <PostTagCard key={tag._id} tag={tag} />
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </CardFooter>
     </Card>

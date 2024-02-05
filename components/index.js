@@ -14,5 +14,6 @@ export const NavBar = dynamic(() => import("./NavBar/NavBar"));
 export const Separator = dynamic(() => import("./reuseable/Separator"));
 export const PostCard = dynamic(() => import("./Post/PostCard"));
 export const PostHeader = dynamic(() => import("./Post/PostHeader/PostHeader"));
+export const PostTagCard = dynamic(() => import("./Tag/PostTagCard"));
 export const TagCard = dynamic(() => import("./Tag/TagCard"));
 export const ThemeSwitcher = dynamic(() => import("./reuseable/ThemeSwitcher"));
