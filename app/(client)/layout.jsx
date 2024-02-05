@@ -1,5 +1,5 @@
 import "@styles/globals.css";
-import { roboto } from "@styles/fonts";
+import { GeistSans } from "geist/font/sans";
 import CustomThemeProvider from "lib/utils/CustomThemeProvider";
 import {
   META_HOME_DESCRIPTION,
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html className="scroll-smooth" lang="en">
       <body
-        className={`${roboto.className} flex h-full flex-col items-center bg-primary-light  text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
+        className={`${GeistSans.className} flex h-full flex-col items-center bg-primary-light  text-primary-light dark:bg-primary-dark dark:text-primary-dark`}
       >
         <CustomThemeProvider>
           {/* NavBar */}

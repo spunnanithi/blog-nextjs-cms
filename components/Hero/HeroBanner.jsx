@@ -1,7 +1,7 @@
 import { ChevronsDown, Send } from "lucide-react";
 import React from "react";
 import Link from "next/link";
-import { Button } from "@components/ui/button";
+// import { Button } from "@components/ui/button";
 
 const HeroBanner = () => {
   const heroBackgroundImageUrl =
@@ -21,22 +21,25 @@ const HeroBanner = () => {
         <div className="flex h-full items-center justify-center">
           <div className="px-6 text-center md:px-12">
             <div className="mb-16 mt-2 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
-              <span className="duration-5000 delay-2000 animate-pulse bg-gradient-to-r from-myDarkGreen via-myImperialBlue to-myDarkBlue bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-myDarkGreen via-myImperialBlue to-myDarkBlue bg-clip-text text-transparent">
                 MyDevJourney
               </span>
             </div>
-            <Button
+            {/* <Button
               variant="outline"
               className="mb-20 border-2 border-myLightGreyBlue bg-transparent px-6 py-6 text-sm font-medium uppercase text-myLightGreyBlue transition duration-150 ease-in-out hover:bg-myLightGreyBlue dark:border-myGreyBlue dark:text-myGreyBlue hover:dark:border-myDarkBlue hover:dark:bg-myDarkBlue"
             >
               <Send className="mr-2 h-5 w-5" />
               Contact Me
-            </Button>
+            </Button> */}
+            <div className="mb-20 bg-gradient-to-r from-myDarkBlue via-myImperialBlue to-myDarkGreen bg-clip-text text-header font-subtitle text-transparent">
+              Adventures Await
+            </div>
             <div className="flex justify-center">
               <Link href="#main">
                 <ChevronsDown
                   size={64}
-                  className="duration-2000 animate-bounce text-myLightGreyBlue dark:text-myGreyBlue"
+                  className="animate-bounce text-myLightGreyBlue duration-2000 dark:text-myGreyBlue"
                 />
               </Link>
             </div>

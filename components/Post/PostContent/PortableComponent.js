@@ -7,10 +7,12 @@ const myPortableTextComponents = {
   // Block
   block: {
     normal: ({ children }) => (
-      <p className="my-8 text-base md:text-lg">{children}</p>
+      <p className="my-8 text-base dark:text-myGreyBlue md:text-lg">
+        {children}
+      </p>
     ),
     h1: ({ children }) => (
-      <h1 className="my-8 text-3xl font-semibold leading-tight md:text-4xl">
+      <h1 className="my-8 text-3xl font-bold leading-tight md:text-4xl">
         {children}
       </h1>
     ),
@@ -56,9 +58,13 @@ const myPortableTextComponents = {
     number: ({ children }) => <ol className="my-4 pl-7">{children}</ol>,
   },
   listItem: {
-    bullet: ({ children }) => <li className="my-2 pl-1">{children}</li>,
+    bullet: ({ children }) => (
+      <li className="my-2 pl-1 dark:text-myGreyBlue">{children}</li>
+    ),
     number: ({ children }) => (
-      <li className="my-1.5 list-decimal pl-1">{children}</li>
+      <li className="my-1.5 list-decimal pl-1 dark:text-myGreyBlue">
+        {children}
+      </li>
     ),
   },
 
@@ -74,26 +80,31 @@ const myPortableTextComponents = {
           href={value.href}
           rel={rel}
           target={targ}
-          className=" text-mySteelBlue hover:underline"
+          className=" font-semibold text-mySteelBlue hover:underline"
           aria-label={`${children}`}
         >
           {children}
         </a>
       ) : (
-        <Link href={value.href} className=" text-mySteelBlue hover:underline">
+        <Link
+          href={value.href}
+          className=" font-semibold text-mySteelBlue hover:underline"
+        >
           {children}
         </Link>
       );
     },
     highlight: ({ children }) => (
-      <span className="rounded-md bg-myDarkBlue bg-opacity-15  px-2 py-2 font-mono text-sm font-bold leading-normal text-myLightGreyBlue dark:bg-myGreyBlue dark:text-myDarkBlue">
+      <span className="rounded-md bg-myDarkBlue bg-opacity-15 px-2 py-2 font-mono text-sm font-bold leading-normal text-myLightGreyBlue dark:bg-myLightGreyBlue dark:text-myDarkBlue">
         {children}
       </span>
     ),
     strong: ({ children }) => (
-      <strong className="font-semibold">{children}</strong>
+      <strong className="font-semibold dark:text-myLightGreyBlue">
+        {children}
+      </strong>
     ),
-    emphasis: ({ children }) => <em className="font-italic">{children}</em>,
+    emphasis: ({ children }) => <em className="font-italic ">{children}</em>,
     code: ({ children }) => (
       <CopyableCodeSnippet>{children}</CopyableCodeSnippet>
     ),
