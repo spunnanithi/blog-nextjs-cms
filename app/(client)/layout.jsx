@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       >
         <CustomThemeProvider>
           {/* NavBar */}
-          <header className="sticky top-0 z-50 m-0 flex w-full justify-center overflow-hidden bg-myGreyBlue p-0 dark:bg-slate-900">
+          <header className="sticky top-0 z-50 m-0 flex w-full justify-center overflow-hidden bg-secondary-light p-0 dark:bg-secondary-dark">
             <NavBar />
           </header>
 
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           </main>
 
           {/* Footer section */}
-          <footer className="z-20 w-full bg-myGreyBlue dark:bg-slate-900">
+          <footer className="z-20 w-full bg-secondary-light dark:bg-secondary-dark">
             <Footer />
           </footer>
         </CustomThemeProvider>

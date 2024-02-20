@@ -36,12 +36,14 @@ module.exports = {
       },
       backgroundColor: {
         primary: {
-          light: "var(--color-light-grey-blue)",
-          dark: "var(--color-dark-blue)",
+          light: "#f1f5f9", // Slate-100
+          // light: "var(--color-light-grey-blue)",
+          dark: "#0f172a", // Slate-900
+          // dark: "var(--color-dark-blue)",
         },
         secondary: {
-          light: "var(--color-grey-blue)",
-          dark: "var(--color-blue)",
+          light: "#cbd5e1", // Slate-300
+          dark: "#020617", // Slate-950
         },
       },
       fontWeight: {
