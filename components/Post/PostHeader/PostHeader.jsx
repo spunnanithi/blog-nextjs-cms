@@ -34,7 +34,7 @@ const PostHeader = ({ singlePost }) => {
         </div>
         <div>
           PUBLISHED <ChevronsRight className="inline-flex" />{" "}
-          <span className="text-myDarkGreen">
+          <span className="text-mySteelBlue">
             {convertIsoToDate(publishedAt)}
           </span>
         </div>
@@ -62,7 +62,7 @@ const PostHeader = ({ singlePost }) => {
           <span>
             <ChevronsRight size={25} className="inline-flex" />
           </span>{" "}
-          <span className="font-title text-myDarkGreen">
+          <span className="font-title text-mySteelBlue">
             {convertIsoToFromNow(singlePost?._updatedAt)}
           </span>
         </div>
