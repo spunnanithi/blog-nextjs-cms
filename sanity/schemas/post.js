@@ -26,6 +26,13 @@ export const post = {
       initialValue: () => new Date().toISOString(),
     },
     {
+      name: "isFeatured",
+      title: "Featured",
+      description: "Set true to include current post in Featured section.",
+      type: "boolean",
+      initialValue: false,
+    },
+    {
       name: "author",
       title: "Author",
       type: "reference",
