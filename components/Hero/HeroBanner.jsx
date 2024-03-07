@@ -20,7 +20,7 @@ const HeroBanner = () => {
       <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed">
         <div className="flex h-full items-center justify-center">
           <div className="px-6 text-center md:px-12">
-            <div className="mb-16 mt-2 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+            <div className="mb-16 mt-2 text-4xl font-bold tracking-tight md:text-6xl xl:text-7xl">
               <span className="bg-gradient-to-r from-myDarkGreen via-myImperialBlue to-myDarkBlue bg-clip-text text-transparent">
                 MyDevJourney
               </span>

@@ -3,7 +3,7 @@ import React from "react";
 const Header = ({ title = "" }) => {
   return (
     <>
-      <div className="mx-auto mb-10 mt-10 text-balance py-5 text-center text-5xl font-header uppercase">
+      <div className="mx-auto my-8 text-balance py-5 text-center text-3xl font-header uppercase sm:my-10 sm:text-5xl">
         {title}
       </div>
     </>

@@ -44,7 +44,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className="container mx-auto flex flex-wrap items-center justify-center gap-20 px-4 py-14 md:justify-around">
+      <div className="container mx-auto flex flex-wrap items-center justify-center gap-20 px-4 py-10 sm:py-14 md:justify-around">
         <div className="flex flex-wrap justify-center">
           <ul className="flex items-center gap-7">
             <TooltipProvider>

@@ -15,7 +15,7 @@ const NavBar = () => {
           width="45"
           height="45"
         />
-        <div className="text-2xl font-header">
+        <div className="text-lg font-header sm:text-2xl">
           <span className="text-myDarkGreen">My</span>
           Dev
           <span className="text-myImperialBlue">Journey</span>
