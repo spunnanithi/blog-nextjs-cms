@@ -5,8 +5,7 @@ import {
   META_TAG_DESCRIPTION,
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
-import { getPostsPerTagQuery } from "@sanity/lib/queries";
-import sanityFetch from "@sanity/lib/sanityFetch";
+import { getPostsPerTag } from "@actions/get-posts-per-tag";
 
 // Dynamic imports
 import { Header, PostCard, Separator, ContentTypeTab } from "@components/index";
@@ -22,19 +21,6 @@ export async function generateMetadata({ params }) {
 }
 
 export const revalidate = 15;
-
-const getPostsPerTag = async (params) => {
-  const postsPerTag = await sanityFetch(getPostsPerTagQuery, {
-    slug: params.slug,
-  });
-
-  if (!postsPerTag) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch posts per tag");
-  }
-
-  return postsPerTag;
-};
 
 const Tag = async ({ params }) => {
   const postsPerTag = await getPostsPerTag(params);

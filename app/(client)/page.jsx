@@ -1,23 +1,12 @@
-import { getAllPostsQuery } from "@sanity/lib/queries";
 import { Button } from "@components/ui/button";
 import Link from "next/link";
-import sanityFetch from "@sanity/lib/sanityFetch";
+
+import { getAllPosts } from "@actions/get-all-posts";
 
 // Dynamic imports
 import { HeroBanner, Header, Separator, PostCard } from "@components/index";
 
 export const revalidate = 15;
-
-const getAllPosts = async () => {
-  const posts = await sanityFetch(getAllPostsQuery);
-
-  if (!posts) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch posts");
-  }
-
-  return posts;
-};
 
 export default async function Home() {
   const posts = await getAllPosts();

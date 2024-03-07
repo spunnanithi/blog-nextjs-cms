@@ -4,8 +4,7 @@ import {
   META_TAG_DESCRIPTION,
   WEBSITE_NAME,
 } from "@constants/_APP_CONSTANTS";
-import { getAllTagsQuery } from "@sanity/lib/queries";
-import sanityFetch from "@sanity/lib/sanityFetch";
+import { getAllTags } from "@actions/get-all-tags";
 
 // Dynamic imports
 import { Header, Separator, TagCard, ContentTypeTab } from "@components/index";
@@ -17,17 +16,6 @@ export const metadata = {
 };
 
 export const revalidate = 15;
-
-const getAllTags = async () => {
-  const tags = await sanityFetch(getAllTagsQuery);
-
-  if (!tags) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch tags");
-  }
-
-  return tags;
-};
 
 const TagHome = async () => {
   const tags = await getAllTags();

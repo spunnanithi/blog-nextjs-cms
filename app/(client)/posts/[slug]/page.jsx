@@ -9,6 +9,7 @@ import {
 } from "@constants/_APP_CONSTANTS";
 import { getSinglePostQuery } from "@sanity/lib/queries";
 import sanityFetch from "@sanity/lib/sanityFetch";
+import { getSinglePost } from "@actions/get-single-post";
 
 // Dynamic imports
 import { PostHeader } from "@components/index";
@@ -24,17 +25,6 @@ export async function generateMetadata({ params }) {
 }
 
 export const revalidate = 15;
-
-const getSinglePost = async (params) => {
-  const post = await sanityFetch(getSinglePostQuery, { slug: params.slug });
-
-  if (!post) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch post");
-  }
-
-  return post[0];
-};
 
 const Post = async ({ params }) => {
   const singlePost = await getSinglePost(params);
