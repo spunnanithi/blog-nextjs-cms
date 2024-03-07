@@ -33,6 +33,22 @@ export const getSinglePostQuery = groq`*[_type == "post" && slug.current == $slu
     tags[]-> { _id, slug, name }
 }`;
 
+// Query for the first SIX featured posts ordered by published date
+export const getFeaturedPostsQuery = groq`*[_type == "post" && isFeatured == true] | order(publishedAt desc)[0..5] {
+  _createdAt,
+  _updatedAt,
+  title,
+  slug,
+  mainImage,
+  publishedAt,
+  excerpt,
+  tags[]-> { _id, slug, name },
+  author -> { name, slug, avatar },
+  "numberOfCharacters": length(pt::text(body)),
+  "estimatedWordCount": round(length(pt::text(body)) / 5),
+  "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
+}`;
+
 // ------------------------------------ Tags ------------------------------------ \\
 export const getAllTagsQuery = groq`*[_type == "tag"] {
   name,

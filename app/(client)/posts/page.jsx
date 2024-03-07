@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <div className="container flex flex-col">
-      <Header title="Recent Posts" />
+      <Header title="All Posts" />
       <ContentTypeTab />
       <Separator />
       <div className="flex flex-wrap justify-center gap-10">

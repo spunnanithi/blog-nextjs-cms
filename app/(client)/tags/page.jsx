@@ -22,7 +22,7 @@ const TagHome = async () => {
 
   return (
     <div className="container flex w-full flex-col">
-      <Header title="Tags" />
+      <Header title="All Tags" />
       <ContentTypeTab />
       <Separator />
 
