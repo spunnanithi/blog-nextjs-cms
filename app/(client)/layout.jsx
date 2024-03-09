@@ -9,6 +9,7 @@ import {
 
 // Dynamic imports
 import { NavBar, Footer } from "@components/index";
+import ScrollToTopButton from "@components/reuseable/ScrollToTopButton";
 
 export const metadata = {
   title: `Home | ${WEBSITE_NAME}`,
@@ -37,6 +38,8 @@ export default function RootLayout({ children }) {
           <footer className="z-20 w-full bg-secondary-light dark:bg-secondary-dark">
             <Footer />
           </footer>
+
+          <ScrollToTopButton />
         </CustomThemeProvider>
       </body>
     </html>
