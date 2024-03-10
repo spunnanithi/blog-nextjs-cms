@@ -39,7 +39,9 @@ const Post = async ({ params }) => {
       {/* Header */}
       <PostHeader singlePost={singlePost} />
 
-      <TableOfContents headings={singlePost?.headings} />
+      <div className="3xl:fixed 3xl:bottom-96 3xl:right-72 flex justify-center">
+        <TableOfContents headings={singlePost?.headings} />
+      </div>
 
       {/* Content */}
       <div>

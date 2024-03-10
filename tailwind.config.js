@@ -24,6 +24,9 @@ module.exports = {
     },
     extend: {
       // Personally added extensions
+      screens: {
+        "3xl": "2300px",
+      },
       textColor: {
         primary: {
           light: "var(--color-dark-blue)",
