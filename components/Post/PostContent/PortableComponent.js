@@ -1,3 +1,4 @@
+import { slugify } from "@utils/helpers";
 import CopyableCodeBlock from "./CopyableCodeBlock";
 import CopyableCodeSnippet from "./CopyableCodeSnippet";
 import ImagePortableComponent from "./ImagePortableComponent";
@@ -17,27 +18,42 @@ const myPortableTextComponents = {
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="my-8 text-2xl font-semibold leading-tight md:text-3xl">
+      <h2
+        id={slugify(children)}
+        className="my-8 pt-24 text-2xl font-semibold leading-tight md:text-3xl"
+      >
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="my-8 text-xl font-semibold leading-tight md:text-2xl">
+      <h3
+        id={slugify(children)}
+        className="my-8 text-xl font-semibold leading-tight md:text-2xl"
+      >
         {children}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="my-8 text-lg font-semibold leading-tight md:text-xl">
+      <h4
+        id={slugify(children)}
+        className="my-8 text-lg font-semibold leading-tight md:text-xl"
+      >
         {children}
       </h4>
     ),
     h5: ({ children }) => (
-      <h5 className="my-8 text-base font-semibold leading-tight md:text-lg">
+      <h5
+        id={slugify(children)}
+        className="my-8 text-base font-semibold leading-tight md:text-lg"
+      >
         {children}
       </h5>
     ),
     h6: ({ children }) => (
-      <h6 className="my-8 text-sm font-semibold leading-tight md:text-base">
+      <h6
+        id={slugify(children)}
+        className="my-8 text-sm font-semibold leading-tight md:text-base"
+      >
         {children}
       </h6>
     ),

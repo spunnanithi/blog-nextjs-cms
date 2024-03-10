@@ -10,6 +10,7 @@ import {
 import { getSinglePostQuery } from "@sanity/lib/queries";
 import sanityFetch from "@sanity/lib/sanityFetch";
 import { getSinglePost } from "@actions/get-single-post";
+import TableOfContents from "@components/Post/TableOfContents";
 
 // Dynamic imports
 import { PostHeader } from "@components/index";
@@ -37,6 +38,8 @@ const Post = async ({ params }) => {
     <div className="container flex flex-col px-5 sm:px-40">
       {/* Header */}
       <PostHeader singlePost={singlePost} />
+
+      <TableOfContents headings={singlePost?.headings} />
 
       {/* Content */}
       <div>

@@ -25,6 +25,7 @@ export const getSinglePostQuery = groq`*[_type == "post" && slug.current == $slu
     publishedAt,
     excerpt,
     _id,
+    "headings": body[style in ["h2"]],
     body,
     author -> { name, slug, avatar },
     "numberOfCharacters": length(pt::text(body)),
