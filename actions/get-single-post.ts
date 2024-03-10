@@ -11,5 +11,5 @@ export const getSinglePost = async (params: { slug: string }) => {
     throw new Error("Failed to fetch post");
   }
 
-  return post[0];
+  return post;
 };

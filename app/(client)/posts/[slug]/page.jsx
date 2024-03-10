@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
   const post = await sanityFetch(getSinglePostQuery, { slug: params.slug });
 
   return {
-    title: `${post[0]?.title} | ${WEBSITE_NAME}`,
+    title: `${post?.title} | ${WEBSITE_NAME}`,
     description: META_POST_DESCRIPTION,
     keywords: META_SEO_KEYWORDS,
   };

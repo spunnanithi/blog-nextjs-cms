@@ -16,7 +16,7 @@ export const getAllPostsQuery = groq`*[_type == "post"] | order(publishedAt desc
   "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
 }`;
 
-export const getSinglePostQuery = groq`*[_type == "post" && slug.current == $slug] {
+export const getSinglePostQuery = groq`*[_type == "post" && slug.current == $slug][0] {
     _createdAt,
     _updatedAt,
     title,
