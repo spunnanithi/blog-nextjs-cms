@@ -39,19 +39,9 @@ Demo link: [MyDevJourney](https://mydevjourney.vercel.app/)
 ## Features
 
 - Dark/light mode
-- Sanity Studio integration
-
-## Requirements
-
-Before starting, make sure you have the following installed:
-
-- Node.js: [Download and install Node.js](https://nodejs.org/en)
-- Node package manager (should have at least one):
-  - [npm](https://www.npmjs.com/)
-  - [yarn](https://yarnpkg.com/)
-  - [pnpm](https://pnpm.io/)
-  - [bun](https://bun.sh/)
-- Sanity CMS account: [Sign up here](https://www.sanity.io/)
+- Sanity Studio integration - Fast and easy content management
+- Scroll to Top button - Seamless navigation
+- Table of Contents - Explore and navigate to each heading for blog post
 
 ## Project Structure
 
@@ -100,6 +90,18 @@ blog-nextjs-cms/
 - **sanity.cli.js**: Sanity CMS CLI command file.
 - **package.json**: Node.js project configuration.
 - **tailwind.config.js**: Tailwind CSS configuration file.
+
+## Requirements
+
+Before starting, make sure you have the following installed:
+
+- Node.js: [Download and install Node.js](https://nodejs.org/en)
+- Node package manager (should have at least one):
+  - [npm](https://www.npmjs.com/)
+  - [yarn](https://yarnpkg.com/)
+  - [pnpm](https://pnpm.io/)
+  - [bun](https://bun.sh/)
+- Sanity CMS account: [Sign up here](https://www.sanity.io/)
 
 ## Getting Started
 
@@ -168,15 +170,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/(client)/page.jsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
